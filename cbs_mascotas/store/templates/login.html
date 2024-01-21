@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<header class="f-barra-logo py-5">
+    <div class="text-center text-white barra-logo">
+        <img src="{% static 'assets/LOGO-TRANSPARENTE.png' %}">
+    </div>
+</header>
+<div claas="container log">
+    <div class="row">
+        <center>
+            <div class="col-5 login bg-dark text-white my-4">
+              <br/>
+              <h2>Inicio de Sesión</h2>
+                <form method="POST" action="{% url 'login' %}" class="loguear">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                      <label class="form-label">Usuario</label>
+                      <input type="text" class="form-control" name="username" placeholder="Ingresa tu usuario">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" name="password" placeholder="Ingresa tu contraseña">
+                    </div>
+                    <button type="submit" class="btn text-white my-4">Login</button>
+                  </form>
+
+            </div>
+
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+    </div>
+</div>
+
+{% endblock %}

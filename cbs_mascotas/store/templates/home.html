@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+    <!-- Header Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'assets/carrusel/imagen_1.jpg' %}" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'assets/carrusel/imagen_2.jpg' %}" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'assets/carrusel/imagen_3.jpg' %}" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Featured Products Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                {% for product in products %}
+                    <center>
+                    <div class="col">
+                        <div class="card bg-dark text-white" style="width:300px">
+                            {% if product.is_sale %}
+                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Oferta</div>
+                            {% endif %}
+                            <a href="{% url 'product' product.id %}"><img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}" style="width: 230px; height: 300px; margin: auto; padding: 5px;"></a>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                {% if product.is_sale %}
+                                    <p class="card-text">
+                                        <strike>${{ product.price|intcomma }}</strike>
+                                        &nbsp; ${{ product.sale_price|intcomma }}
+                                    </p>
+                                {% else %}
+                                    <p class="card-text">${{ product.price|intcomma }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="{% url 'product' product.id %}" class="btn btn-outline-light">Ver Producto</a>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

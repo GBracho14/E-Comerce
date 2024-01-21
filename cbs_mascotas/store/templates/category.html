@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<header class="f-barra-logo py-5">
+    <div class="text-center text-white barra-logo my-4">
+        <h1 class="display-4 fw-bolder outlined-text">{{ category }}</h1>
+    </div>
+</header>
+<!-- Featured Products Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            {% for product in products %}
+                <center>
+                <div class="col">
+                    <div class="card bg-dark text-white" style="width:300px">
+                        {% if product.is_sale %}
+                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem;">Oferta</div>
+                        {% endif %}
+                        <a href="{% url 'product' product.id %}"><img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}" style="width: 230px; height: 300px; margin: auto; padding: 5px;"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            {% if product.is_sale %}
+                                <p class="card-text">
+                                    <strike>${{ product.price|intcomma }}</strike>
+                                    &nbsp; ${{ product.sale_price|intcomma }}
+                                </p>
+                            {% else %}
+                                <p class="card-text">${{ product.price|intcomma }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="{% url 'product' product.id %}" class="btn btn-outline-light">Ver Producto</a>
+                        </div>
+                    </div>
+                </div>
+            </center>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

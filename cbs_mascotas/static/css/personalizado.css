@@ -1,0 +1,111 @@
+/* PERSONALIZADOS"*/
+.logo{
+    height: 60px;
+    width: 80px;
+  }
+
+.cuadro_texto{
+    background-color: rgba(0, 0, 0, 0.596);
+    padding: 5%;
+    width: 80%;
+    margin: auto;
+  }
+
+#historia{
+    background-image: url(../assets/Fondos/Fondo_historia.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+/*Slider*/
+
+.slidercontainer {
+  background-color: rgba(0, 0, 0, 0.596);
+  justify-items: center;
+  margin-top: 30px;
+  overflow: hidden; 
+}
+
+.slider {
+  width: 75%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: calc(200px * 14);
+}
+
+.slider .slide {
+  width: 200px;
+}
+
+.slider .slide img {
+  width: 80%;
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+    100% {
+    -webkit-transform: translateX(calc(-200px *14));
+    transform: translateX(calc(-200px *14));
+    } 
+}
+
+.login{
+  border-radius: 8px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.loguear{
+  width: 70%;
+  padding-top: 5%;
+  margin: auto;
+  justify-content: center;
+}
+
+.loguear button{
+  background-color: green;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin: auto;
+}
+
+.barra-logo img{
+  height: 200px;
+}
+
+.f-barra-logo{
+  background-image: url(../assets/Fondos/Fondo_login.jpg);
+
+  background-position-y: -500px;
+  height: 300px;
+}
+
+.log{
+  position: absolute;
+}
+
+.outlined-text {
+  color: white; 
+  position: relative;
+  display: inline-block;
+}
+
+.outlined-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: black;
+  -webkit-background-clip: text;
+  background-clip: text;
+}

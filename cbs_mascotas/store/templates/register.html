@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<header class="f-barra-logo py-5">
+    <div class="text-center barra-logo">
+        <img src="{% static 'assets/LOGO-TRANSPARENTE.png' %}">
+    </div>
+</header>
+<div claas="container log">
+    <div class="row justify-content-center" style="margin-top:3%; margin-bottom: 3%;">
+            <div class="col-md-5 login bg-dark text-white">
+                <br/>
+                <h2 Style="margin-top:20px;" class="text-center">Creación de Usuario</h2>
+                <form method="POST" action="{% url 'register' %}" class="my-4">
+                    {% csrf_token %}
+                    <div class="loguear">
+                      {{ form.as_p }}
+                      <br/>
+                      <div Style="margin: auto;">
+                        <button button type="submit" class="btn text-white my-4">Registrar</button>
+                      </div>
+                    </div>
+                </form>
+            </div>
+
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+    </div>
+</div>
+{% endblock %}

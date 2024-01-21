@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<main id="historia">
+    <!-- Sección sobre nosotros -->
+
+    <div class="container-fluid text-center text-white ">
+
+        <div class="cuadro_texto">
+            <h1>Sobre Nosotros</h1>
+            <br><br><br>
+            <p align="justify" >En CBS Mascotas, nuestra historia se teje con el amor incondicional por los animales. Somos más que una empresa, somos una familia apasionada y comprometida con el bienestar de las mascotas. Durante años, hemos cultivado este vínculo especial, brindando un servicio excepcional y una atención personalizada a nuestros clientes.
+
+                    Nuestro propósito es simple pero poderoso: ofrecer productos que se adapten perfectamente a las necesidades de las mascotas y sus dueños. Cada día nos esforzamos por comprender profundamente las particularidades y preferencias individuales de cada animalito, para así garantizar soluciones que promuevan su salud, comodidad y felicidad.
+                    
+                    En CBS Mascotas, no solo nos dedicamos a proveer productos, sino que también compartimos la misma pasión y compromiso que nuestros clientes tienen por sus adorables compañeros peludos. Este camino ha sido marcado por el afecto, la dedicación y el deseo constante de brindar lo mejor a quienes confían en nosotros para cuidar de sus seres queridos de cuatro patas.</p>
+        </div>
+    </div>
+    
+    <div class="container-fluid text-center text-white " Style="width=100%">
+
+        <div class="cuadro_texto">
+            <h1>Nuestra Historia</h1>
+            <br>
+            <p align="justify" >Nuestra historia se entrelaza con un sueño familiar que cobró vida en 2017, en la cálida comuna de La Florida. Desde entonces, nos dedicamos apasionadamente a mejorar, a brindar lo mejor en servicios y a expandir nuestro vínculo con los amantes de las mascotas.
+
+                El año 2020 marcó un punto de inflexión. La pandemia nos desafió y, lamentablemente, nos vimos obligados a cerrar nuestras puertas. Pasamos un año entero lejos de lo que más amamos. Sin embargo, a principios de 2021, resurgimos con renovada energía en Huechuraba. Abrimos un nuevo capítulo con un local renovado, repleto de productos y, sobre todo, con un deseo inquebrantable de ofrecer lo mejor a nuestros clientes y sus fieles amigos.
+                
+                Nuestro propósito es claro: seguir creciendo y dejar una huella indeleble en los corazones de cada cliente y su querida mascota. Queremos ser más que una tienda, queremos ser parte de las historias que se tejen con cada peludo compañero.</p>
+            </div>
+        </div>
+        <!-- Esto es un Slider -->
+        <div class="slidercontainer row">
+            <h1 class="text-center text-white bg-dark">MARCAS QUE TRABAJAMOS</h1>
+            <div class="slider">
+                <div class="slide-track">
+    
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/BilJac_Logo.png' %}">
+                    </div>
+                    <div class="slide"> 
+                        <img src="{% static '/assets/Slider/Brit_Care_Logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Pro_Plan_Logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Royal_Canin_Logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Monge_logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Hills_Logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Acana_Logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Orijen_Logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Cooking_Logo.jpg' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Fit_Logo.jpg' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Oven_Baked_Logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Leonardo_Logo.png' %}">
+                    </div>
+                    <div class="slide">
+                        <img src="{% static '/assets/Slider/Belcando_Logo.png' %}">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</main>
+
+{% endblock %}
